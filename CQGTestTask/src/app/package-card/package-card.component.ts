@@ -37,9 +37,7 @@ export class PackageCardComponent {
   }
 
   onMouseEnter() {
-    if (this.package) {
-      this.hover.emit(this.package.dependencies);
-    }
+    this.hover.emit(this.package.dependencies);
   }
 
   onMouseLeave() {
