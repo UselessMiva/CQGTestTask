@@ -1,0 +1,29 @@
+<div
+  class="package-card"
+  [class.package-card--dependency-highlight]="dependencyHighlight"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div class="package-card__header">
+    @if (getPackageNameParts().packageCoreName) {
+    <span class="package-card__core-name"
+      >{{ getPackageNameParts().packageCoreName }}/</span
+    >
+    }
+    <span class="package-card__module-name">{{
+      getPackageNameParts().packageModuleName
+    }}</span>
+  </div>
+  <div class="package-card__body">
+    <div class="package-card__downloads">
+      <p class="package-card__downloads-amount">
+        {{ formatNumber(package.weeklyDownloads) }}
+      </p>
+      <mat-icon class="package-card__downloads-icon">get_app</mat-icon>
+    </div>
+    <div class="package-card__dependencies">
+      {{ formatNumber(package.dependencyCount) }}
+      {{ package.dependencyCount === 1 ? "dependency" : "dependencies" }}
+    </div>
+  </div>
+</div>

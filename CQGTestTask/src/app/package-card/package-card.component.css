@@ -1,0 +1,52 @@
+.package-card {
+  border: 2px solid rgb(74, 74, 74);
+  border-radius: 5px;
+  margin: 8px;
+  width: 250px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: white;
+
+  &:hover {
+    .package-card__header {
+      background-color: rgba(128, 191, 240, 0.34);
+    }
+  }
+
+  &.package-card--dependency-highlight {
+    .package-card__header {
+      background-color: rgba(240, 128, 128, 0.34);
+    }
+  }
+
+  .package-card__header {
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    border-bottom: 2px solid rgb(74, 74, 74);
+    margin-bottom: 12px;
+    transition: background-color 0.3s;
+    .package-card__core-name {
+      color: orange;
+    }
+  }
+
+  .package-card__body {
+    font-size: 14px;
+    padding: 0 15px 15px 15px;
+    color: black;
+    div {
+      margin-bottom: 4px;
+    }
+  }
+  .package-card__downloads {
+    display: flex;
+  }
+  .package-card__downloads-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    margin-top: 13px;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="package-list__container">
+  <div class="package-list__controls">
+    <input
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="searchExpression"
+      (ngModelChange)="onSearchChange(searchExpression)"
+      class="package-list__search-input"
+    />
+    <button (click)="Renew()" class="package-list__renew-button">
+      <mat-icon class="package-list__renew-icon">autorenew</mat-icon>
+    </button>
+  </div>
+  <div class="package-list__list">
+    @for (pkg of filteredPackages; track pkg.id) {
+    <app-package-card
+      [package]="pkg"
+      [highlighted]="false"
+      [dependencyHighlight]="isDependencyHighlighted(pkg.id)"
+      (hover)="onDependencyHover($event)"
+    >
+    </app-package-card>
+    }
+  </div>
+</div>
