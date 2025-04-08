@@ -4,15 +4,7 @@ import { provideHttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   template: ` <app-package-list></app-package-list> `,
-  styles: [
-    `
-      h1 {
-        text-align: center;
-        color: rgb(35, 62, 217);
-        margin: 20px 0;
-      }
-    `,
-  ],
+  styles: [],
   imports: [PackageListComponent],
 })
 export class AppComponent {
